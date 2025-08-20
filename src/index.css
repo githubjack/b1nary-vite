@@ -1,68 +1,151 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  :root {
+    /* Font & Typography */
+    --base-ff: 'Hubot Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --base-fw: 400;
+    --base-lh: 1.5;
+    --base-fs: 16px;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    --header-1-fs: 8rem;
+    --header-1-fw: 700;
+    --header-1-lh: 1.1;
+
+    --header-2-fs: 6rem;
+    --header-2-fw: 600;
+    --header-2-lh: 1.1;
+
+    --header-3-fs: 3rem;
+    --header-3-fw: 500;
+    --header-3-lh: 1.1;
+
+    --header-4-fs: 1.75rem;
+    --header-4-fw: 400;
+    --header-4-lh: 1.1;
+
+    /* 1. Define the DEFAULT (Light Mode) color scheme */
+    --base-bg: #D1D5C6;
+    --base-bg-light: #E1E4D7;
+    --base-bg-dark: #5D5F59;
+    --base-text: #575B4C;
+
+    /* 2. Define a DARK MODE color scheme */
+    --dark-bg: #2b2b2b;
+    --dark-bg-light: #3b3b3b;
+    --dark-bg-dark: #1a1a1a;
+    --dark-text: #e1e1e1;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 3. Tell the browser we support both schemes (for native UI like scrollbars) */
+html {
+    color-scheme: light dark;
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* 4. Apply the DEFAULT (Light Mode) styles */
+body {
+    background-color: var(--base-bg);
+    color: var(--base-text);
+    font-size: var(--base-fs);
+    line-height: var(--base-lh);
+    font-family: var(--base-ff);
+    font-weight: var(--base-fw);
+}
+
+/* 5. OVERRIDE the defaults if the user prefers DARK mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* This is optional. You can also directly set them on body in the media query. 
+           Doing it on :root is useful if other elements use these variables. */
+        --base-bg: var(--dark-bg);
+        --base-text: var(--dark-text);
+        /* You would also override --base-bg-light and --base-bg-dark here if needed */
+    }
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #1A1A1A;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  color: #111111;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: var(--header-1-fs);
+  line-height: var(--header-1-lh);
+}
+h2 {
+  font-size: var(--header-2-fs);
+  line-height: var(--header-2-lh);
+}
+h3 {
+  font-size: var(--header-3-fs);
+  line-height: var(--header-3-lh);
 }
 
+p {
+  font-size: var(--base-fs);
+  line-height: var(--base-lh);
+}
+abbr {
+  position: relative;
+  text-decoration: underline dotted;
+  text-decoration: none;
+  font-weight: var(--header-1-fw);
+}
+/* abbr:hover::after {
+    position: absolute;
+
+    top: 100%;
+    left: 100%;
+    display: block;
+    padding: 1em;
+    background: yellow;
+    color: black;
+    content: attr(data-abbr);
+} */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: var(--base-fs);
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  /* background-color: #1a1a1a; */
+  background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--base-bg-dark);
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+
