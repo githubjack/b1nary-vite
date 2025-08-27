@@ -1,0 +1,106 @@
+.hero-header {
+    /* color: var(--dark-text); */
+    padding-block: 6rem 0;
+
+}
+
+.type {
+  padding-inline: var(--base-pd-inline);  
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  /* align-items: center; */
+  container-type: inline-size; /* 👈 enables @container */
+}
+
+.type h1 {
+    width: 15ch;
+    letter-spacing: -0.25rem;
+    /* font-size: clamp(var(--hdr-4-fs, 2rem), 10vw, var(--hdr-1-fs)); */
+    /* Switch to fixed size when viewport exceeds calculated max width */
+    font-size: clamp(1.75rem, 8.5vw, min(8.5vw, 12rem));
+    line-height: 1;
+}
+@media (min-width: 1920px) {
+            .type h1 {
+                font-size: 12rem;
+            }
+        }
+
+/* @supports (-webkit-text-stroke: 1px var(--base-text)) {
+  .outline {
+    -webkit-text-stroke: 1px var(--base-text);
+    -webkit-text-fill-color: var(--base-bg);
+  }
+} */
+/* .type h1 span {
+  padding-inline-start: auto;
+} */
+@container (min-width: 320px) and (max-width: 1024px) {
+  .type h1 {
+    letter-spacing: 2px;
+  }
+}
+p {
+  color: #c7c4c4;
+}
+/*
+* Utility classes
+*/
+.underline {
+    font-weight: var(--bold-fw);
+    padding: 0.25rem;
+    /* background-color: #575B4C; */
+    /* color: white; */
+    color: #fff;
+}
+
+.booking-action{
+    inline-size: 100%;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    /* margin-block-start: 8rem; */
+    block-size: 368px;
+    background-image: url(../../assets/images/hero-image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+  .booking-action {
+    block-size: 300px;
+    flex-direction: column;
+  }
+}
+
+button {
+    block-size: 4rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button.primary {
+    text-transform: uppercase;
+    font-size: small;
+    font-weight: var(--bold-fw);
+    background-color: var(--base-bg);
+    color: var(--base-text);
+    letter-spacing: 0.04em;
+}
+button.primary:hover {
+    background-color: var(--base-bg-dark);
+    color: var(--dark-text);
+}
+button.primary:focus {
+    outline: 2px solid var(--base-bg-dark);
+    outline: none;
+}
+button.secondary {
+    background-color: var(--base-bg-dark);
+    color: var(--dark-text);
+}

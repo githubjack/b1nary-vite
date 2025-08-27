@@ -1,0 +1,50 @@
+.aside {
+position: fixed;
+/*     top: 10rem;
+    right: 0.5rem;
+    inline-size: 5rem;
+    /* background-color: var(--base-bg-light); 
+    overflow-y: auto;
+    /* border-radius: 1rem; 
+    overflow-x: clip;
+    border: 1px solid var(--dark-bg); */
+    position: fixed;
+    top: 0;
+    /* inline-size: 10rem; */
+    inline-size: auto;
+    /* overflow-y: auto; */
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1001;
+}
+
+.aside ul {
+    padding-block: 0.9rem 0;
+    padding-inline: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    /* font-size: small; */
+
+}
+
+.aside li {
+    margin-inline:0.25rem;
+    color: var(--base-text);     /* FIXED */
+}
+
+.aside a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.aside i {
+    color: inherit;
+}

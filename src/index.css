@@ -5,45 +5,168 @@
   box-sizing: border-box;
 }
 
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ul[role='navigation'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@font-face {
+  font-family: 'HubotSans';
+  src: local('HubotSans'), 
+  url('/src/assets/fonts/HubotSans.woff2') format('woff2'),
+}
+@font-face {
+  font-family: 'HubotSans-Regular';
+  src: local('HubotSans-Regular'), 
+  url('/src/assets/fonts/HubotSans-Regular.woff2') format('woff2'),
+}
+@font-face {
+  font-family: 'HubotSans-Medium';
+  src: local('HubotSans-Medium'), 
+  url('/src/assets/fonts/HubotSans-Medium.woff2') format('woff2'),
+}
+@font-face {
+  font-family: 'HubotSans-Bold';
+  src: local('HubotSans-Bold'), 
+  url('/src/assets/fonts/HubotSans-Bold.woff2') format('woff2'),
+}
+@import 'primeicons/primeicons.css';
+
   :root {
     /* Font & Typography */
-    --base-ff: 'Hubot Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
-    --base-fw: 400;
+/*     --base-ff: 'Hubot Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
     --base-lh: 1.5;
-    --base-fs: 16px;
+    --base-fs: 16px; */
+    /* responsive sizes */
+ /*    --base-fs-sm: 0.65rem;
+    --base-fs-md: 1rem;
+    --base-fs-lg: 1.125rem; */
 
-    --header-1-fs: 8rem;
-    --header-1-fw: 700;
-    --header-1-lh: 1.1;
+    /* Headers Sizes */
 
-    --header-2-fs: 6rem;
-    --header-2-fw: 600;
-    --header-2-lh: 1.1;
+/*     --hdr-1-fs: 12rem;
+    --hdr-2-fs: 7rem;
+    --hdr-3-fs: 3rem;
+    --hdr-4-fs: 1.75rem; */
 
-    --header-3-fs: 3rem;
-    --header-3-fw: 500;
-    --header-3-lh: 1.1;
 
-    --header-4-fs: 1.75rem;
-    --header-4-fw: 400;
-    --header-4-lh: 1.1;
+    /* Headers Weights */
+
+ /*    --bold-fw: 700;
+    --semi-bold-fw: 600;
+    --medium-fw: 500;
+    --regular-fw: 400; */
+
 
     /* 1. Define the DEFAULT (Light Mode) color scheme */
-    --base-bg: #D1D5C6;
+/*     --base-bg: #D1D5C6;
     --base-bg-light: #E1E4D7;
     --base-bg-dark: #5D5F59;
-    --base-text: #575B4C;
+    --base-text: #575B4C; */
 
     /* 2. Define a DARK MODE color scheme */
-    --dark-bg: #2b2b2b;
+/*     --dark-bg: #2b2b2b;
     --dark-bg-light: #3b3b3b;
     --dark-bg-dark: #1a1a1a;
-    --dark-text: #e1e1e1;
+    --dark-text: #e1e1e1; */
 
-    font-synthesis: none;
+    /* 3. Define base padding for block layout */
+    /* --base-pd-inline: clamp(0.6rem, 4vw, 2rem); */
+
+/*     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale; */
+}
+
+/* In index.css */
+:root {
+  /* Font & Typography */
+  --base-ff: 'Hubot Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --base-lh: 1.5;
+  --base-fs: 16px;
+  --base-fs-sm: 0.65rem;
+  --base-fs-md: 1rem;
+  --base-fs-lg: 1.125rem;
+
+  --hdr-1-fs: 12rem;
+  --hdr-2-fs: 7rem;
+  --hdr-3-fs: 3rem;
+  --hdr-4-fs: 1.75rem;
+
+  --bold-fw: 700;
+  --semi-bold-fw: 600;
+  --medium-fw: 500;
+  --regular-fw: 400;
+
+  /* Light mode palette in OKLCH */
+  --base-bg: oklch(92% 0.02 120);        /* #D1D5C6 */
+  --base-bg-light: oklch(95% 0.015 120); /* #E1E4D7 */
+  --base-bg-dark: oklch(45% 0.02 120);   /* #5D5F59 */
+  --base-text: oklch(35% 0.015 120);     /* #575B4C */
+
+  /* Dark mode palette in OKLCH */
+  --dark-bg: oklch(25% 0.01 270);        /* #2b2b2b */
+  --dark-bg-light: oklch(32% 0.01 270);  /* #3b3b3b */
+  --dark-bg-dark: oklch(15% 0.005 270);  /* #1a1a1a */
+  --dark-text: oklch(95% 0.01 270);      /* #e1e1e1 */
+
+  --base-pd-inline: clamp(0.6rem, 4vw, 2rem);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* 3. Tell the browser we support both schemes (for native UI like scrollbars) */
@@ -66,12 +189,13 @@ dd {
 
 /* 4. Apply the DEFAULT (Light Mode) styles */
 body {
-    background-color: var(--base-bg);
+/*     background-color: var(--base-bg);
     color: var(--base-text);
-    font-size: var(--base-fs);
+    font-size: clamp(var(--base-fs), 1.5vw, var(--base-fs-lg));
     line-height: var(--base-lh);
     font-family: var(--base-ff);
-    font-weight: var(--base-fw);
+    font-weight: var(--regular-fw);
+    overflow-x: clip; */
 }
 
 /* 5. OVERRIDE the defaults if the user prefers DARK mode */
@@ -79,55 +203,64 @@ body {
     :root {
         /* This is optional. You can also directly set them on body in the media query. 
            Doing it on :root is useful if other elements use these variables. */
-        --base-bg: var(--dark-bg);
-        --base-text: var(--dark-text);
+/*         --base-bg: var(--dark-bg);
+        --base-text: var(--dark-text); */
         /* You would also override --base-bg-light and --base-bg-dark here if needed */
     }
 }
 
+body {
+  background-color: var(--base-bg);
+  color: var(--base-text);
+  font-size: clamp(var(--base-fs), 1.5vw, var(--base-fs-lg));
+  line-height: var(--base-lh);
+  font-family: var(--base-ff);
+  font-weight: var(--regular-fw);
+  overflow-x: clip;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --base-bg: var(--dark-bg);
+    --base-bg-light: var(--dark-bg-light);
+    --base-bg-dark: var(--dark-bg-dark);
+    --base-text: var(--dark-text);
+  }
+}
+
+
+
+
+
+
 a {
-  font-weight: 500;
-  color: #1A1A1A;
-  text-decoration: inherit;
+  font-weight: var(--medium-fw);
+/*   color: #1A1A1A;
+  text-decoration: inherit; */
 }
 a:hover {
-  color: #111111;
+  /* color: #111111; */
 }
 
 h1 {
-  font-size: var(--header-1-fs);
-  line-height: var(--header-1-lh);
+  font-size: var(--hdr-1-fs);
+  line-height: 1;
 }
 h2 {
-  font-size: var(--header-2-fs);
-  line-height: var(--header-2-lh);
+  font-size: var(--hdr-2-fs);
+  line-height: 1.1;
 }
 h3 {
-  font-size: var(--header-3-fs);
-  line-height: var(--header-3-lh);
+  font-size: var(--hdr-3-fs);
+  line-height: 1.1;
 }
 
 p {
   font-size: var(--base-fs);
   line-height: var(--base-lh);
 }
-abbr {
-  position: relative;
-  text-decoration: underline dotted;
-  text-decoration: none;
-  font-weight: var(--header-1-fw);
-}
-/* abbr:hover::after {
-    position: absolute;
 
-    top: 100%;
-    left: 100%;
-    display: block;
-    padding: 1em;
-    background: yellow;
-    color: black;
-    content: attr(data-abbr);
-} */
 button {
   border-radius: 8px;
   border: 1px solid transparent;

@@ -1,16 +1,18 @@
 
 import './App.css'
-
+import Aside from './components/Aside/Aside'
+import Bento from './components/Bento/Bento'
+import HeroHeader from './components/HeroHeader/HeroHeader'
+import Nav from './components/Nav/Nav'
 function App() {
 
   return (
-    <>
-    <div className='app-shell'>
-      <small>Binary <abbr title="Design as a Service">DAAS ✳</abbr></small>
-      <h1>Hello world</h1>
-      <p>This is a paragraph.</p>
+    <div className='layout'>
+      <HeroHeader />
+      <Bento />
+      <Aside />
+      <Nav />
     </div>
-    </>
   )
 }
 
