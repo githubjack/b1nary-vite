@@ -15,3 +15,16 @@
     -webkit-text-fill-color: var(--base-bg);
   }
 }
+.title-block {
+    display: flex;
+    justify-content: center;
+    inline-size: -webkit-fill-available;
+    inline-size: fit-content;
+    margin-inline: auto;
+    margin-block-end: 3rem;
+}
+.full-stop {
+    font-size: var(--base-fs-lg);
+    line-height: 1rem;
+    color: var(--base-text);
+}

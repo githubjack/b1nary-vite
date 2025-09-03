@@ -82,92 +82,44 @@ select {
 }
 @import 'primeicons/primeicons.css';
 
-  :root {
-    /* Font & Typography */
-/*     --base-ff: 'Hubot Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
-    --base-lh: 1.5;
-    --base-fs: 16px; */
-    /* responsive sizes */
- /*    --base-fs-sm: 0.65rem;
-    --base-fs-md: 1rem;
-    --base-fs-lg: 1.125rem; */
 
-    /* Headers Sizes */
-
-/*     --hdr-1-fs: 12rem;
-    --hdr-2-fs: 7rem;
-    --hdr-3-fs: 3rem;
-    --hdr-4-fs: 1.75rem; */
-
-
-    /* Headers Weights */
-
- /*    --bold-fw: 700;
-    --semi-bold-fw: 600;
-    --medium-fw: 500;
-    --regular-fw: 400; */
-
-
-    /* 1. Define the DEFAULT (Light Mode) color scheme */
-/*     --base-bg: #D1D5C6;
-    --base-bg-light: #E1E4D7;
-    --base-bg-dark: #5D5F59;
-    --base-text: #575B4C; */
-
-    /* 2. Define a DARK MODE color scheme */
-/*     --dark-bg: #2b2b2b;
-    --dark-bg-light: #3b3b3b;
-    --dark-bg-dark: #1a1a1a;
-    --dark-text: #e1e1e1; */
-
-    /* 3. Define base padding for block layout */
-    /* --base-pd-inline: clamp(0.6rem, 4vw, 2rem); */
-
-/*     font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; */
-}
-
-/* In index.css */
 :root {
-  /* Font & Typography */
-  --base-ff: 'Hubot Sans', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --base-lh: 1.5;
-  --base-fs: 16px;
-  --base-fs-sm: 0.65rem;
-  --base-fs-md: 1rem;
-  --base-fs-lg: 1.125rem;
+          /* Font & Typography */
+          --base-ff: "Hubot Sans", system-ui, Avenir, Helvetica, Arial, sans-serif;
+          --base-lh: 1.5;
+          --base-fs: 16px;
+          --base-fs-sm: 0.65rem;
+          --base-fs-md: 1rem;
+          --base-fs-lg: 1.125rem;
 
-  --hdr-1-fs: 12rem;
-  --hdr-2-fs: 7rem;
-  --hdr-3-fs: 3rem;
-  --hdr-4-fs: 1.75rem;
+          --hdr-1-fs: 12rem;
+          --hdr-2-fs: 7rem;
+          --hdr-3-fs: 3rem;
+          --hdr-4-fs: 1.75rem;
 
-  --bold-fw: 700;
-  --semi-bold-fw: 600;
-  --medium-fw: 500;
-  --regular-fw: 400;
+          --bold-fw: 700;
+          --semi-bold-fw: 600;
+          --medium-fw: 500;
+          --regular-fw: 400;
 
-  /* Light mode palette in OKLCH */
-  --base-bg: oklch(92% 0.02 120);        /* #D1D5C6 */
-  --base-bg-light: oklch(95% 0.015 120); /* #E1E4D7 */
-  --base-bg-dark: oklch(45% 0.02 120);   /* #5D5F59 */
-  --base-text: oklch(35% 0.015 120);     /* #575B4C */
+          /* Light mode palette */
+          --base-bg: #D1D5C6;
+          --base-bg-light: #E1E4D7;
+          --base-bg-dark: #5D5F59;
+          --base-text: #575B4C;
 
-  /* Dark mode palette in OKLCH */
-  --dark-bg: oklch(25% 0.01 270);        /* #2b2b2b */
-  --dark-bg-light: oklch(32% 0.01 270);  /* #3b3b3b */
-  --dark-bg-dark: oklch(15% 0.005 270);  /* #1a1a1a */
-  --dark-text: oklch(95% 0.01 270);      /* #e1e1e1 */
+          /* Dark mode palette */
+          --dark-bg: #2b2b2b;
+          --dark-bg-light: #3b3b3b;
+          --dark-bg-dark: #1a1a1a;
+          --dark-text: #e1e1e1;
 
-  --base-pd-inline: clamp(0.6rem, 4vw, 2rem);
+          --base-pd-inline: clamp(0.6rem, 4vw, 2rem);
+        }
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+
+
+
 
 /* 3. Tell the browser we support both schemes (for native UI like scrollbars) */
 html {
@@ -188,26 +140,7 @@ dd {
 }
 
 /* 4. Apply the DEFAULT (Light Mode) styles */
-body {
-/*     background-color: var(--base-bg);
-    color: var(--base-text);
-    font-size: clamp(var(--base-fs), 1.5vw, var(--base-fs-lg));
-    line-height: var(--base-lh);
-    font-family: var(--base-ff);
-    font-weight: var(--regular-fw);
-    overflow-x: clip; */
-}
 
-/* 5. OVERRIDE the defaults if the user prefers DARK mode */
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* This is optional. You can also directly set them on body in the media query. 
-           Doing it on :root is useful if other elements use these variables. */
-/*         --base-bg: var(--dark-bg);
-        --base-text: var(--dark-text); */
-        /* You would also override --base-bg-light and --base-bg-dark here if needed */
-    }
-}
 
 body {
   background-color: var(--base-bg);
@@ -231,17 +164,10 @@ body {
 
 
 
-
-
-
 a {
   font-weight: var(--medium-fw);
-/*   color: #1A1A1A;
-  text-decoration: inherit; */
 }
-a:hover {
-  /* color: #111111; */
-}
+
 
 h1 {
   font-size: var(--hdr-1-fs);
@@ -261,24 +187,7 @@ p {
   line-height: var(--base-lh);
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: var(--base-fs);
-  font-weight: 500;
-  font-family: inherit;
-  /* background-color: #1a1a1a; */
-  background-color: transparent;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: var(--base-bg-dark);
-}
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-

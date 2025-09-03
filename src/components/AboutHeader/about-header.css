@@ -1,0 +1,61 @@
+header {
+        padding-block: 5rem 0;
+}
+.type {
+  padding-inline: var(--base-pd-inline);  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  container-type: inline-size; /* 👈 enables @container */
+}
+
+.type h1 {
+    width: 15ch;
+    letter-spacing: -0.25rem;
+    font-size: clamp(1.75rem, 8.5vw, min(8.5vw, 12rem));
+    line-height: 1;
+    text-align: center;
+    margin-block-end: 3.5rem;
+}
+@media (min-width: 1920px) {
+            .type h1 {
+                font-size: 12rem;
+            }
+        }
+
+@container (min-width: 320px) and (max-width: 1024px) {
+  .type h1 {
+    letter-spacing: 2px;
+  }
+}
+
+.type h1 .outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--base-text);
+  text-stroke: 1.5px var(--base-text);
+}
+
+/* Dark mode outline */
+@media (prefers-color-scheme: dark) {
+  .type h1 .outline {
+    -webkit-text-stroke: 1.5px var(--dark-text);
+    text-stroke: 1.5px var(--dark-text);
+  }
+}
+
+.header-image {
+
+    inline-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    block-size: 368px;
+    background-image: url(/src/assets/images/about-image.png);
+    filter: grayscale(100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    position: relative
+}

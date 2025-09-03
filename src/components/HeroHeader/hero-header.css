@@ -1,25 +1,22 @@
 .hero-header {
-    /* color: var(--dark-text); */
-    padding-block: 6rem 0;
-
+    padding-block: 5rem 0;
 }
 
 .type {
   padding-inline: var(--base-pd-inline);  
   display: flex;
-  gap: 0.5rem;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
   container-type: inline-size; /* 👈 enables @container */
 }
 
 .type h1 {
     width: 15ch;
     letter-spacing: -0.25rem;
-    /* font-size: clamp(var(--hdr-4-fs, 2rem), 10vw, var(--hdr-1-fs)); */
-    /* Switch to fixed size when viewport exceeds calculated max width */
     font-size: clamp(1.75rem, 8.5vw, min(8.5vw, 12rem));
     line-height: 1;
+    text-align: center;
+    margin-block-end: 3.5rem;
 }
 @media (min-width: 1920px) {
             .type h1 {
@@ -27,80 +24,207 @@
             }
         }
 
-/* @supports (-webkit-text-stroke: 1px var(--base-text)) {
-  .outline {
-    -webkit-text-stroke: 1px var(--base-text);
-    -webkit-text-fill-color: var(--base-bg);
-  }
-} */
-/* .type h1 span {
-  padding-inline-start: auto;
-} */
 @container (min-width: 320px) and (max-width: 1024px) {
   .type h1 {
     letter-spacing: 2px;
   }
 }
-p {
-  color: #c7c4c4;
+/* Update your hero-header.css with these changes */
+
+.type h1 .outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--base-text);
+  text-stroke: 1.5px var(--base-text);
+}
+
+/* Dark mode outline */
+@media (prefers-color-scheme: dark) {
+  .type h1 .outline {
+    -webkit-text-stroke: 1.5px var(--dark-text);
+    text-stroke: 1.5px var(--dark-text);
+  }
 }
 /*
 * Utility classes
 */
-.underline {
-    font-weight: var(--bold-fw);
-    padding: 0.25rem;
-    /* background-color: #575B4C; */
-    /* color: white; */
-    color: #fff;
-}
+.motto {
+  position: absolute;
+  inset-block-start: 2em;
+  margin-inline-start: -16em;
+  font-weight: var(--bold-fw);
+  padding: 0.25rem;
 
-.booking-action{
+}
+.motto span {
+  color: #716d6d;
+  background-color: #2d2d2d;
+}
+.booking{
     inline-size: 100%;
     display: flex;
     justify-content: center;
-    justify-content: space-evenly;
     align-items: center;
     gap: 1rem;
-    /* margin-block-start: 8rem; */
     block-size: 368px;
-    background-image: url(../../assets/images/hero-image.png);
+    background-image: url(/src/assets/images/hero-image.png);
+    filter: grayscale(100%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    flex-direction: column;
+    position: relative
 }
-
+.booking:hover {
+    filter: grayscale(0%);
+    filter: saturate(100%);
+}
 @media screen and (min-width: 320px) and (max-width: 1024px) {
-  .booking-action {
+  .booking {
     block-size: 300px;
     flex-direction: column;
   }
 }
 
-button {
-    block-size: 4rem;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+ /* Update button styles in hero-header.css */
+/* 
 button.primary {
-    text-transform: uppercase;
-    font-size: small;
-    font-weight: var(--bold-fw);
-    background-color: var(--base-bg);
-    color: var(--base-text);
-    letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: small;
+  font-weight: var(--bold-fw);
+  background-color: #575b4c; 
+  color: #ffffff;
+  letter-spacing: 0.04em;
+} */
+
+a.primary {
+  text-transform: uppercase;
+  font-size: small;
+  font-weight: var(--bold-fw);
+  background-color: #575b4c; /* Constant color for both modes */
+  color: #ffffff; /* White text for better contrast */
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 2em;
 }
-button.primary:hover {
-    background-color: var(--base-bg-dark);
+
+
+
+/* button.primary:hover {
+  background-color: #45483d; 
+  color: white;
+} */
+
+a.primary:hover {
+  background-color: #45483d; /* Slightly darker on hover */
+  color: white;
+}
+
+/* Dark mode button styles */
+@media (prefers-color-scheme: dark) {
+/*   button.primary {
+    background-color: var(--dark-bg-light);
+    color: var(--dark-bg-dark);
+    border: 1px solid var(--dark-bg-light);
+  } */
+
+  a.primary {
+    background-color: var(--dark-bg-light);
+    color: #f3f4f6;
+    border: 1px solid var(--dark-bg-light);
+    background-color: var(--dark-bg-light);
+    color: #f3f4f6;
+    border: 1px solid var(--dark-bg-light);
+    }
+  
+/*   button.primary:hover {
+
     color: var(--dark-text);
-}
-button.primary:focus {
-    outline: 2px solid var(--base-bg-dark);
-    outline: none;
-}
-button.secondary {
-    background-color: var(--base-bg-dark);
+  } */
+
+  a.primary:hover {
     color: var(--dark-text);
+    color: #d7d2d2;
+  }
+}
+
+/* Update your hero-header.css with these changes */
+
+.type h1 .outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--base-text);
+  text-stroke: 1.5px var(--base-text);
+}
+
+/* Dark mode outline */
+@media (prefers-color-scheme: dark) {
+  .type h1 .outline {
+    -webkit-text-stroke: 1.5px var(--dark-text);
+    text-stroke: 1.5px var(--dark-text);
+  }
+}
+
+/* button.primary {
+  text-transform: uppercase;
+  font-size: small;
+  font-weight: var(--bold-fw);
+  color: var(--base-bg-light);
+  letter-spacing: 0.04em;
+  border: 1px solid var(--base-bg-dark);
+  transition: all 0.3s ease;
+} */
+
+a.primary {
+  text-transform: uppercase;
+  font-size: small;
+  font-weight: var(--bold-fw);
+  /* background-color: var(--base-bg-dark); */
+  color: var(--base-bg-light);
+  color: #d7d2d2;
+  letter-spacing: 0.04em;
+  border: 1px solid var(--base-bg-dark);
+  border-radius: 0.5em;
+  transition: all 0.3s ease;
+}
+
+/* button.primary:hover {
+  background-color: inherit;
+  color: var(--base-bg-dark);
+  color: var(--base-bg-light);
+} */
+
+
+a.primary:hover {
+  /* background-color: transparent; */
+  background-color: inherit;
+  background-color: var(--base-text);
+  color: var(--base-bg-dark);
+  color: var(--base-bg-light);
+}
+/* Specific change for .learn-more button in dark mode */
+@media (prefers-color-scheme: dark) {
+  button.primary.learn-more {
+    background-color: #585c4d; /* The requested color */
+    color: var(--dark-bg-light);
+    color: white;
+    border: 1px solid #585c4d;
+  }
+
+  a.primary.learn-more {
+    background-color: #585c4d; /* The requested color */
+    color: var(--dark-bg-light);
+    color: white;
+    border: 1px solid #585c4d;
+  }
+  
+  button.primary.learn-more:hover {
+    /* background-color: transparent; */
+    color: #585c4d;
+    color: white;
+  }
+
+  a.primary.learn-more:hover {
+    /* background-color: transparent; */
+    color: #585c4d;
+    color: white;
+  }
 }
