@@ -1,0 +1,46 @@
+
+.contact {
+    padding-block: 5rem 0;
+
+    .contact-header {
+        inline-size: 7ch;
+        margin-inline: auto;
+        text-align: center;
+    }
+}
+
+.contact-group {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 6rem;
+    margin-inline: auto;
+    inline-size: 75%;
+    padding-block: 2em;
+    border-block: 1px solid var(--base-text);
+
+    .contact-info {
+        flex: 2;
+        margin-right: 3rem;
+
+        p{
+            margin: 0.5rem 0;
+            font-size: calc(var(--h2-fs) - 1rem);
+        }
+        ul{
+            margin:0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+    }
+    .contact-text {
+        flex: 1;
+        p {
+            margin: 0.5rem 0;
+            font-size: calc(var(--base-fs) + 0.5rem);
+        }
+
+    }
+}
+

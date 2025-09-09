@@ -3,11 +3,12 @@ import './App.css'
 import 'lenis/dist/lenis.css'
 import Lenis from 'lenis'
 import Aside from './components/Aside/Aside'
-import Bento from './components/Bento/Bento'
-import HeroHeader from './components/HeroHeader/HeroHeader'
 import Nav from './components/Nav/Nav'
-import Recent from './components/Recent/Recent'
-import Marquee from './components/Marquee/Marquee'
+import Home from './pages/Home'
+import About from './pages/About'
+import Services from './pages/Services'
+import Contact from './pages/Contact'
+import { Routes, Route } from 'react-router-dom'
 import Footer from './components/Footer/Footer'
 
 
@@ -23,13 +24,16 @@ lenis.on('scroll', (e) => {
 });
   return (
     <div className='layout'>
-      <HeroHeader />
-      <Bento />
-      <Marquee />
-      <Recent />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/contact" element={<Contact />} />
+        {/* Add more routes as needed */}
+      </Routes>
+      <Nav />
       <Footer />
       <Aside />
-      <Nav />
     </div>
   )
 }

@@ -1,61 +1,101 @@
-header {
-        padding-block: 5rem 0;
-}
-.type {
-  padding-inline: var(--base-pd-inline);  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  container-type: inline-size; /* 👈 enables @container */
+header.about {
+    padding-block: 5rem 0;
+    position: relative;
+    overflow: hidden; 
 }
 
-.type h1 {
+.type {
+    padding-inline: var(--base-pd-inline);  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    container-type: inline-size; /* 👈 enables @container */
+
+    h1 {
     width: 15ch;
     letter-spacing: -0.25rem;
     font-size: clamp(1.75rem, 8.5vw, min(8.5vw, 12rem));
     line-height: 1;
     text-align: center;
-    margin-block-end: 3.5rem;
+    }
 }
+
+
+
 @media (min-width: 1920px) {
-            .type h1 {
-                font-size: 12rem;
-            }
-        }
+    .type h1 {
+        font-size: 12rem;
+    }
+}
 
 @container (min-width: 320px) and (max-width: 1024px) {
-  .type h1 {
-    letter-spacing: 2px;
-  }
+    .type h1 {
+        letter-spacing: 2px;
+    }
 }
 
 .type h1 .outline {
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--base-text);
-  text-stroke: 1.5px var(--base-text);
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--base-text);
+    text-stroke: 1.5px var(--base-text);
 }
 
 /* Dark mode outline */
 @media (prefers-color-scheme: dark) {
-  .type h1 .outline {
-    -webkit-text-stroke: 1.5px var(--dark-text);
-    text-stroke: 1.5px var(--dark-text);
-  }
+    .type h1 .outline {
+        -webkit-text-stroke: 1.5px var(--dark-text);
+        text-stroke: 1.5px var(--dark-text);
+    }
 }
 
 .header-image {
-
-    inline-size: 100%;
-    display: flex;
+inline-size: 90%;
+    display: flex
+;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    block-size: 368px;
-    background-image: url(/src/assets/images/about-image.png);
-    filter: grayscale(100%);
+    background-image: url(../../assets/images/04-Fev.png);
+
     background-size: cover;
-    background-position: center;
+    block-size: 400px;
+    background-position: center 40%;
     background-repeat: no-repeat;
-    flex-direction: column;
-    position: relative
+    transition: filter 0.5s ease-in-out;
+    margin-block-end: 7.5em;
+    border-radius: 4rem;
+    margin-inline: auto;
+}
+
+.header-image:hover {
+    filter: grayscale(0%);
+    transition: filter 0.5s ease-in-out;
+}
+
+/* Progress indicator for debugging */
+.progress-indicator {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-family: monospace;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        /* height: 120vh; */
+    }
+    
+    .type h1 {
+        margin-block-end: 2rem;
+    }
+    
+    .header-image {
+        background-position: center 20%; /* Adjust for mobile */
+    }
 }

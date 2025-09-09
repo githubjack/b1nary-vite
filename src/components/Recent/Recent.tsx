@@ -2,18 +2,19 @@ import React from "react";
 import "./recent.css";
 import muayThumb from "../../assets/images/thumbs/muay-thumb.png";
 import lcsThumb from "../../assets/images/thumbs/lcs-thumb.png";
+
+
 const Recent: React.FC = () => {
   return (
   <div className="grid-block">
     <div className="title-block">
-      <h2><span className="outline">Recent </span>ux <span className="outline">projects</span><span className="full-stop">✳</span></h2>
+      <h2>Recent ux projects <span className="full-stop">✳</span></h2>
     </div>
 
     <div className="recent-grid">
       <div className="a">
         <article className="project">
           <h3>Muay</h3>
-          {/* Use the imported image in an img tag */}
         <img 
           src={muayThumb}
           width={"100%"} 

@@ -9,9 +9,9 @@
   flex-direction: column;
 }
 
-@supports (-webkit-text-stroke: 1px var(--base-text)) {
+@supports (-webkit-text-stroke: 2px var(--base-text)) {
   .outline {
-    -webkit-text-stroke: 1px var(--base-text);
+    -webkit-text-stroke: 2px var(--base-text);
     -webkit-text-fill-color: var(--base-bg);
   }
 }
@@ -22,6 +22,7 @@
     inline-size: fit-content;
     margin-inline: auto;
     margin-block-end: 3rem;
+    text-transform: capitalize;
 }
 .full-stop {
     font-size: var(--base-fs-lg);

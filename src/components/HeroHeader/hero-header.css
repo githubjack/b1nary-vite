@@ -1,5 +1,11 @@
 .hero-header {
-    padding-block: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 2rem 0;
+    margin-block-end: 2rem;
+
 }
 
 .type {
@@ -7,17 +13,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  container-type: inline-size; /* 👈 enables @container */
-}
 
-.type h1 {
+  h1 {
     width: 15ch;
     letter-spacing: -0.25rem;
     font-size: clamp(1.75rem, 8.5vw, min(8.5vw, 12rem));
     line-height: 1;
     text-align: center;
-    margin-block-end: 3.5rem;
+    text-transform: capitalize;
+  }
+
 }
+
 @media (min-width: 1920px) {
             .type h1 {
                 font-size: 12rem;
@@ -26,39 +33,28 @@
 
 @container (min-width: 320px) and (max-width: 1024px) {
   .type h1 {
-    letter-spacing: 2px;
+    letter-spacing: 3px;
   }
 }
 /* Update your hero-header.css with these changes */
 
 .type h1 .outline {
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--base-text);
-  text-stroke: 1.5px var(--base-text);
+  -webkit-text-stroke: 2px var(--base-text);
+  text-stroke: 2px var(--base-text);
 }
 
 /* Dark mode outline */
 @media (prefers-color-scheme: dark) {
   .type h1 .outline {
-    -webkit-text-stroke: 1.5px var(--dark-text);
-    text-stroke: 1.5px var(--dark-text);
+    -webkit-text-stroke: 2px var(--dark-text);
+    text-stroke: 2px var(--dark-text);
   }
 }
 /*
 * Utility classes
 */
-.motto {
-  position: absolute;
-  inset-block-start: 2em;
-  margin-inline-start: -16em;
-  font-weight: var(--bold-fw);
-  padding: 0.25rem;
 
-}
-.motto span {
-  color: #716d6d;
-  background-color: #2d2d2d;
-}
 .booking{
     inline-size: 100%;
     display: flex;
@@ -72,7 +68,9 @@
     background-position: center;
     background-repeat: no-repeat;
     flex-direction: column;
-    position: relative
+    text-align: center;
+    border-radius: 4em;
+
 }
 .booking:hover {
     filter: grayscale(0%);
@@ -85,16 +83,58 @@
   }
 }
 
- /* Update button styles in hero-header.css */
-/* 
-button.primary {
-  text-transform: uppercase;
-  font-size: small;
+.booking {
+  position: relative;
+  /* ... other styles remain the same */
+}
+
+.motto {
+  position: absolute;
   font-weight: var(--bold-fw);
-  background-color: #575b4c; 
-  color: #ffffff;
-  letter-spacing: 0.04em;
-} */
+  padding: 0.25rem;
+  opacity: 0;
+  transition: opacity 800ms ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Always centered */
+  text-align: center;
+  width: max-content; /* Prevents text wrapping */
+  max-width: 90%; /* Ensures it doesn't overflow on mobile */
+}
+
+.motto.visible {
+  opacity: 1;
+}
+
+.motto.fade-out {
+  opacity: 0;
+}
+
+.motto.visible span,
+.motto.fade-out span {
+  color: #c7c0c0;
+  font-size: 2rem;
+  transition: color 800ms ease, font-size 800ms ease;
+}
+
+/* Responsive font size for motto */
+@media screen and (max-width: 768px) {
+  .motto.visible span,
+  .motto.fade-out span {
+    font-size: 1rem;
+  }
+  
+  .motto {
+    max-width: 95%; /* More space on mobile */
+  }
+}
+
+
+
+
+ /* Update button styles in hero-header.css */
+
+
 
 a.primary {
   text-transform: uppercase;
@@ -108,12 +148,6 @@ a.primary {
 }
 
 
-
-/* button.primary:hover {
-  background-color: #45483d; 
-  color: white;
-} */
-
 a.primary:hover {
   background-color: #45483d; /* Slightly darker on hover */
   color: white;
@@ -121,11 +155,7 @@ a.primary:hover {
 
 /* Dark mode button styles */
 @media (prefers-color-scheme: dark) {
-/*   button.primary {
-    background-color: var(--dark-bg-light);
-    color: var(--dark-bg-dark);
-    border: 1px solid var(--dark-bg-light);
-  } */
+
 
   a.primary {
     background-color: var(--dark-bg-light);
@@ -136,11 +166,6 @@ a.primary:hover {
     border: 1px solid var(--dark-bg-light);
     }
   
-/*   button.primary:hover {
-
-    color: var(--dark-text);
-  } */
-
   a.primary:hover {
     color: var(--dark-text);
     color: #d7d2d2;
@@ -151,46 +176,42 @@ a.primary:hover {
 
 .type h1 .outline {
   color: transparent;
-  -webkit-text-stroke: 1.5px var(--base-text);
-  text-stroke: 1.5px var(--base-text);
+  -webkit-text-stroke: 2px var(--base-text);
+  text-stroke: 2px var(--base-text);
 }
 
 /* Dark mode outline */
 @media (prefers-color-scheme: dark) {
   .type h1 .outline {
-    -webkit-text-stroke: 1.5px var(--dark-text);
-    text-stroke: 1.5px var(--dark-text);
+    -webkit-text-stroke: 2px var(--dark-text);
+    text-stroke: 2px var(--dark-text);
   }
 }
 
-/* button.primary {
-  text-transform: uppercase;
-  font-size: small;
-  font-weight: var(--bold-fw);
-  color: var(--base-bg-light);
-  letter-spacing: 0.04em;
-  border: 1px solid var(--base-bg-dark);
-  transition: all 0.3s ease;
-} */
 
+p.book {
+  display: block;
+  position: absolute;
+  z-index:900;
+}
 a.primary {
   text-transform: uppercase;
   font-size: small;
   font-weight: var(--bold-fw);
-  /* background-color: var(--base-bg-dark); */
+  background-color: var(--base-bg-dark);
   color: var(--base-bg-light);
   color: #d7d2d2;
   letter-spacing: 0.04em;
   border: 1px solid var(--base-bg-dark);
   border-radius: 0.5em;
   transition: all 0.3s ease;
+
+  padding: 1em 2em;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-/* button.primary:hover {
-  background-color: inherit;
-  color: var(--base-bg-dark);
-  color: var(--base-bg-light);
-} */
+
 
 
 a.primary:hover {
@@ -217,13 +238,11 @@ a.primary:hover {
   }
   
   button.primary.learn-more:hover {
-    /* background-color: transparent; */
     color: #585c4d;
     color: white;
   }
 
   a.primary.learn-more:hover {
-    /* background-color: transparent; */
     color: #585c4d;
     color: white;
   }

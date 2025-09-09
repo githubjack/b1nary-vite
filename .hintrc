@@ -6,5 +6,15 @@
     "defaults",
     "not ie 11",
     "not ios_saf <= 15.8"
-  ]
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "inline-size: fit-content"
+        ]
+      }
+    ]
+  }
 }
