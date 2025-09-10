@@ -14,7 +14,7 @@ const ContactForm: React.FC = () => {
                 <div className="contact-info">
                     <p>hello@b1nary.xyz</p>
                     <p>+44 7960198446</p>
-                    <p>Linkedin Profiles</p>
+{/*                     <p>Linkedin Profiles</p>
                     <ul>
                         <li>
                             <a href="https://www.linkedin.com/in/jack-maynard-ux/" 
@@ -30,7 +30,7 @@ const ContactForm: React.FC = () => {
                                 <img src={avatarDes} width={100} alt="Andrew Badu" />
                             </a>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
                 <div className="contact-text">
                     <p> We are based in the UK. Spread from London to Liverpool. 

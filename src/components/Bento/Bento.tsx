@@ -86,7 +86,7 @@ const Bento: React.FC = () => {
                   dismissableMask
                   maximizable
                 >
-                  <p>We offer a wide range of services to help businesses succeed in the digital landscape. Our services include <b>web</b> development, <b>mobile app</b> development, <b>UI/UX design</b>, and more.</p>
+                  <p>Book a free consultation: We are contactable via the information on the contact page. Furthermore you can reach out to us through our social media channels. Github and Linkedin</p>
                 </Dialog>
               </div>
             </article>
