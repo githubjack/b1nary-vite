@@ -1,7 +1,7 @@
 import React from "react";
 import './contact-form.css';
-import avatarDev from '../../assets/images/avatar-jack.png';
-import avatarDes from '../../assets/images/avatar-andrew.png';
+
+
 const ContactForm: React.FC = () => {
     return (
         <>
@@ -14,23 +14,7 @@ const ContactForm: React.FC = () => {
                 <div className="contact-info">
                     <p>hello@b1nary.xyz</p>
                     <p>+44 7960198446</p>
-{/*                     <p>Linkedin Profiles</p>
-                    <ul>
-                        <li>
-                            <a href="https://www.linkedin.com/in/jack-maynard-ux/" 
-                                target="_blank" 
-                                rel="noopener noreferrer">
-                                <img src={avatarDev} width={100} alt="Jack Maynard" />
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/andrew-badu-809b3015/" 
-                                target="_blank" 
-                                rel="noopener noreferrer">
-                                <img src={avatarDes} width={100} alt="Andrew Badu" />
-                            </a>
-                        </li>
-                    </ul> */}
+
                 </div>
                 <div className="contact-text">
                     <p> We are based in the UK. Spread from London to Liverpool. 
@@ -40,9 +24,6 @@ const ContactForm: React.FC = () => {
                 </div>
             </div>
         </header>
-
-
-
         </>
     );
 };
